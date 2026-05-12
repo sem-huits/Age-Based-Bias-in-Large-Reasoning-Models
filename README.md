@@ -178,7 +178,6 @@ ngrok will provide a public URL (e.g. `https://xxxx.ngrok-free.app`) that annota
 | `safety_keyword_density_think` | Safety keyword density in reasoning trace |
 | `safety_keyword_density_resp` | Safety keyword density in final response |
 | `reasoning_response_gap` | Difference between the two densities |
-| `annotation` | Human annotation label |
 | `llm_annotation` | Judge (LLM) annotation label |
 
 ### Safety keyword lexicon
