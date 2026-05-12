@@ -265,7 +265,6 @@ def process_single(task):
         'safety_keyword_density_think': kd_reasoning,
         'safety_keyword_density_resp':  kd_response,
         'reasoning_response_gap':       reasoning_response_gap,
-        'annotation':                   annotation,
         'llm_annotation':               annotation,
     }
 
@@ -345,26 +344,6 @@ def process_full_dataset(dataset_df, output_csv=None, sample_size=None,
             print(f"All {len(results_df)} rows have a reasoning_trace.\n")
 
     return results_df
-
-
-# ============================================================================
-# COHEN'S KAPPA SAMPLE
-# ============================================================================
-
-def export_kappa_sample(results_df, output_csv, n_per_condition=25):
-    sample = (results_df.groupby('age_condition', group_keys=False)
-                        .apply(lambda x: x.sample(min(n_per_condition, len(x)), random_state=42))
-                        .reset_index(drop=True))
-
-    sample['annotator_1'] = ""
-    sample['annotator_2'] = ""
-
-    cols = ['id', 'type', 'age_condition', 'prompt', 'completion',
-            'annotation', 'annotator_1', 'annotator_2']
-    sample[cols].to_csv(output_csv, index=False)
-    print(f"Cohen's kappa sample saved: {output_csv} ({len(sample)} rows)")
-    return sample
-
 
 # ============================================================================
 # RUN
