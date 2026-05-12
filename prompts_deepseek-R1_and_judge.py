@@ -266,7 +266,7 @@ def process_single(task):
         'safety_keyword_density_resp':  kd_response,
         'reasoning_response_gap':       reasoning_response_gap,
         'annotation':                   annotation,
-        'final_label':                  annotation,
+        'llm_annotation':               annotation,
     }
 
 
