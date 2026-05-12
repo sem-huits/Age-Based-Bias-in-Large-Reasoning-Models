@@ -26,7 +26,7 @@ SAFETY_KEYWORDS = [
 # OUTPUT PATH
 # ============================================================================
 
-OUTPUT_DIR = '/tmp/sem-folder'
+OUTPUT_DIR = 'results/csv files'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # ============================================================================
