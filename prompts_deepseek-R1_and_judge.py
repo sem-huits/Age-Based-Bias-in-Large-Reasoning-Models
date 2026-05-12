@@ -361,12 +361,6 @@ all_results_df = process_full_dataset(
     checkpoint_every=50,
 )
 
-export_kappa_sample(
-    all_results_df,
-    output_csv=f'{OUTPUT_DIR}/kappa_sample.csv',
-    n_per_condition=25,
-)
-
 print("\n--- Summary per age condition ---")
 if len(all_results_df) > 0:
     summary = (all_results_df
